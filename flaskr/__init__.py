@@ -29,4 +29,8 @@ def create_app(test_config=None):
     def hello():
         return 'Hello, World!'
 
+    # apply the blueprints to the app
+    from flaskr import auth
+    app.register_blueprint(auth.bp)
+
     return app
